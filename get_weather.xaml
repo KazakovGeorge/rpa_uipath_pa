@@ -1,0 +1,358 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="get_weather" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="country" Type="InArgument(x:String)" />
+    <x:Property Name="region" Type="InArgument(x:String)" />
+    <x:Property Name="city" Type="InArgument(x:String)" />
+  </x:Members>
+  <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
+  <sap:VirtualizedContainerService.HintSize>730.4,1386.3999999999999</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="57">
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="496,1321.6" sap2010:WorkflowViewState.IdRef="Sequence_7">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Новая вкладка" sap:VirtualizedContainerService.HintSize="433.6,1063.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="a949d64a-4757-42ec-8f5f-bb785e429547" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Сделать" sap:VirtualizedContainerService.HintSize="400,836.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="337.6,92" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" Url="https://www.gismeteo.ru/diary" Version="V3" />
+            <uix:NSelectItem DisplayName="Select Item 'Выберите страну'" sap:VirtualizedContainerService.HintSize="337.6,167.2" sap2010:WorkflowViewState.IdRef="NSelectItem_1" ScopeIdentifier="a949d64a-4757-42ec-8f5f-bb785e429547" Version="V3">
+              <uix:NSelectItem.Item>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">country</CSharpValue>
+                </InArgument>
+              </uix:NSelectItem.Item>
+              <uix:NSelectItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="50">
+                  <x:String>Абхазия</x:String>
+                  <x:String>Австралия</x:String>
+                  <x:String>Австрия</x:String>
+                  <x:String>Азербайджан</x:String>
+                  <x:String>Аландские острова</x:String>
+                  <x:String>Албания</x:String>
+                  <x:String>Алжир</x:String>
+                  <x:String>Ангилья</x:String>
+                  <x:String>Ангола</x:String>
+                  <x:String>Андорра</x:String>
+                  <x:String>Антигуа и Барбуда</x:String>
+                  <x:String>Аргентина</x:String>
+                  <x:String>Армения</x:String>
+                  <x:String>Аруба</x:String>
+                  <x:String>Афганистан</x:String>
+                  <x:String>Багамские острова</x:String>
+                  <x:String>Бангладеш</x:String>
+                  <x:String>Барбадос</x:String>
+                  <x:String>Бахрейн</x:String>
+                  <x:String>Беларусь</x:String>
+                  <x:String>Белиз</x:String>
+                  <x:String>Бельгия</x:String>
+                  <x:String>Бенин</x:String>
+                  <x:String>Бермуды</x:String>
+                  <x:String>Болгария</x:String>
+                  <x:String>Боливия</x:String>
+                  <x:String>Бонэйр, Синт-Эстатиус и Саба</x:String>
+                  <x:String>Босния и Герцеговина</x:String>
+                  <x:String>Ботсвана</x:String>
+                  <x:String>Бразилия</x:String>
+                  <x:String>Британская территория в Индийском океане</x:String>
+                  <x:String>Британские Виргинские острова</x:String>
+                  <x:String>Бруней</x:String>
+                  <x:String>Буркина-Фасо</x:String>
+                  <x:String>Бурунди</x:String>
+                  <x:String>Бутан</x:String>
+                  <x:String>Вануату</x:String>
+                  <x:String>Ватикан</x:String>
+                  <x:String>Великобритания</x:String>
+                  <x:String>Венгрия</x:String>
+                  <x:String>Венесуэла</x:String>
+                  <x:String>Виргинские острова (США)</x:String>
+                  <x:String>Внешние малые острова США</x:String>
+                  <x:String>Восточный Тимор</x:String>
+                  <x:String>Вьетнам</x:String>
+                  <x:String>Габон</x:String>
+                  <x:String>Гаити</x:String>
+                  <x:String>Гайана</x:String>
+                  <x:String>Гамбия</x:String>
+                  <x:String>Гана</x:String>
+                </scg:List>
+              </uix:NSelectItem.Items>
+              <uix:NSelectItem.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.gismeteo.ru/diary/" DesignTimeRectangle="800, 334, 219, 31" DesignTimeScaleFactor="1.25" ElementType="DropDown" FriendlyName="'Абхазия'" FullSelectorArgument="&lt;webctrl id='sd_country' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='sd_country' tag='SELECT' type='' class='selector_select' aaname='Выберите страну:' /&gt;" Guid="0bc22556-5227-4210-a3c3-2da12d002640" InformativeScreenshot="3ce885994b09f992d6fda2cd125297ac.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='GISMETEO.RU: Погода в России. Точный прогноз погоды (метеопрогноз) на сегодня, завтра, выходные, неделю, месяц.' /&gt;" SearchSteps="FuzzySelector" Version="V1" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target DesignTimeRectangle="800, 307, 157, 20" ElementType="Text" FriendlyName="'Выберите страну'" FullSelectorArgument="&lt;webctrl tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' aaname='Выберите страну:' check:innerText='Выберите страну:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKEAAAAYCAYAAACSlJ0LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAANOSURBVGhD7ZfJUeQwFIYnp8mIA1HQWXQVRQKcONEpuAoiGKpIgctkoPEmvf9tsqw2GDw6fAfcWt7ySTa//vwNodHYkyZhY3eahI3daRI2dqdJ2NidJmFjd0DCj3B/9xB+32a468ILTN6E9y7cWHvdXsKzNb5xONZJOLKdHC9Pj8b6EzdPH+acxvGokPAhnDq+SBXpBmw33v+OLeH5jQ0agddmuqXg2ZKYz+d57fhK7y5pXvpt5DHcv+v51iHhe76F0/x8iC+3Jt3A4gDMMcU1cjf1CH6eqM+K8sOl96G5RTGwPsg6WXFQrbxxql+RVKO+pq+Z/is3YE/hV5WEacMrJJyKewknJgvhCSah17Y/JhLXtCXk81dJCPJyvANF8MOCTHPXSmiDceTqRPUokrBfM40Tzugar5UwBwZ1hYSs+CkoiAH2obFUpGySPRQPPJ/XtCSUzSa5J9ymmMVdONARcfOOz1AoMdeNgUkIwhlrpTxxDYgj1s3dS0hIf1Mt7fw3lJDJtomEGHyPKggFz8Wg53KcarwonJKQNXGiWELZFPVc5AfYa059kPv743sgfjnPOnCE7vlqCVUfelZ4MVD1j4l5ai1ABpmUm6SUbmmPnikeT9YeURTeGMr71PlrePHKG1Qj5AT8Gti443NNV9Lk+6wkdKG80tjcbZuh/JuwhwLzbxBJbKYsoB/oF0sYmzTGcXwJqYewThpTJyG/9ckj1QeHzSSUycuCyb+ZCDBPFyQjF4PGlb+OI7Gg6yWUa+OcJVQ98bncJz63YoA+yLh5nR1BchIW5Qvrni9zLOX1qHodp8CukBDnkjQQAySf5mKzVDFAwh6KB57Pa0oJqSEVEjry++MBaL4Vg5zrrom1xOarGlv15X2vk9A42Cpvu04DVRKmBrPkHeYNraT0jRQRpyi3T0oIknSIcfN98RaqkTCXhz6ckrSugZxbJqEF1TMX60CthDIGWb8NJVwhxwBstpxURLyeEzo+nigXiBfbP7W80XUSjqhaiFpl0GLYc0skHPJJ40Z0PfXvUNvMpTHiScj6Y8VfJOFPxxfo8AgJzTGfDkjoHVSHJuER+A4Smt+3ZTQJj8CeEhZ/Tvk0CY/At5Gw/DsYOZCEjZ9JCP8AGJl0na+WJCYAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NSelectItem.Target>
+            </uix:NSelectItem>
+            <uix:NSelectItem DisplayName="Select Item 'Выберите область'" sap:VirtualizedContainerService.HintSize="337.6,167.2" sap2010:WorkflowViewState.IdRef="NSelectItem_3" ScopeIdentifier="a949d64a-4757-42ec-8f5f-bb785e429547" Timeout="60" Version="V3">
+              <uix:NSelectItem.Item>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">region</CSharpValue>
+                </InArgument>
+              </uix:NSelectItem.Item>
+              <uix:NSelectItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="50">
+                  <x:String>Все области</x:String>
+                  <x:String>------------</x:String>
+                  <x:String>Алтайский край</x:String>
+                  <x:String>Амурская область</x:String>
+                  <x:String>Архангельская область</x:String>
+                  <x:String>Астраханская область</x:String>
+                  <x:String>Белгородская область</x:String>
+                  <x:String>Брянская область</x:String>
+                  <x:String>Владимирская область</x:String>
+                  <x:String>Волгоградская область</x:String>
+                  <x:String>Вологодская область</x:String>
+                  <x:String>Воронежская область</x:String>
+                  <x:String>Донецкая народная республика</x:String>
+                  <x:String>Еврейская автономная область</x:String>
+                  <x:String>Забайкальский край</x:String>
+                  <x:String>Запорожская область</x:String>
+                  <x:String>Ивановская область</x:String>
+                  <x:String>Иркутская область</x:String>
+                  <x:String>Кабардино-Балкарская республика</x:String>
+                  <x:String>Калининградская область</x:String>
+                  <x:String>Калужская область</x:String>
+                  <x:String>Камчатский край</x:String>
+                  <x:String>Карачаево-Черкесская республика</x:String>
+                  <x:String>Кемеровская область</x:String>
+                  <x:String>Кировская область</x:String>
+                  <x:String>Костромская область</x:String>
+                  <x:String>Краснодарский край</x:String>
+                  <x:String>Красноярский край</x:String>
+                  <x:String>Курганская область</x:String>
+                  <x:String>Курская область</x:String>
+                  <x:String>Ленинградская область</x:String>
+                  <x:String>Липецкая область</x:String>
+                  <x:String>Луганская народная республика</x:String>
+                  <x:String>Магаданская область</x:String>
+                  <x:String>Москва (город федерального значения)</x:String>
+                  <x:String>Московская область</x:String>
+                  <x:String>Мурманская область</x:String>
+                  <x:String>Ненецкий автономный округ</x:String>
+                  <x:String>Нижегородская область</x:String>
+                  <x:String>Новгородская область</x:String>
+                  <x:String>Новосибирская область</x:String>
+                  <x:String>Омская область</x:String>
+                  <x:String>Оренбургская область</x:String>
+                  <x:String>Орловская область</x:String>
+                  <x:String>Пензенская область</x:String>
+                  <x:String>Пермский край</x:String>
+                  <x:String>Приморский край</x:String>
+                  <x:String>Псковская область</x:String>
+                  <x:String>Республика Адыгея</x:String>
+                  <x:String>Республика Алтай</x:String>
+                </scg:List>
+              </uix:NSelectItem.Items>
+              <uix:NSelectItem.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.gismeteo.ru/diary/" DesignTimeRectangle="1076, 334, 219, 31" DesignTimeScaleFactor="1.25" ElementType="DropDown" FriendlyName="'Все области'" FullSelectorArgument="&lt;webctrl id='sd_distr' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='sd_distr' tag='SELECT' type='' class='selector_select' aaname='Выберите область:' /&gt;" Guid="d9ddff7c-c267-4518-95bb-703db5f131f3" InformativeScreenshot="deb02fabb215ae05ca778b3b8e87ebdd.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='GISMETEO.RU: Погода в России. Точный прогноз погоды (метеопрогноз) на сегодня, завтра, выходные, неделю, месяц.' /&gt;" SearchSteps="FuzzySelector" Version="V1" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target DesignTimeRectangle="1076, 307, 170, 20" ElementType="Text" FriendlyName="'Выберите область'" FullSelectorArgument="&lt;webctrl parentid='selector_block2' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='selector_block2' tag='LABEL' type='' class='' aaname='Выберите область:' check:innerText='Выберите область:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAK4AAAAYCAYAAABjn8aGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAANYSURBVHhe7Zc7ViMxEEVnT7Mnr4LEm/A5BKROCciICUiJCDnExMSa/ujz6qlKrW7MzDSu4AaW9Sk9XXXbv94/Q3CcveHiOrvExXV2iYvr7BIX19klLq6zS4S4j6fb8PvQ4iE8Qv/L8BqO6lrncPem9b92PK+RleKOXDCg5wdl/sjpVR9zzXhemQ3i3obD/YeYZBvpyeFP1j48L0QX9+YpvED7DLyi8u3+CHc33GaQnxYx+LencBg+j5fg5f4cv5s5PtPYCF8svkCifno6ib5x7bFdrgV7VOaowZ9OkEXE2kdNPbbKc01ei3XLMTzfiPpwgtwSeZ7OrNqOSUpd9WXdJG7Z1BfEnT6fw/FUhzYig1MONgHrstgVqa8hrhi/SlwQnlAFQBQZCnAx1uS1WHfZtyZtonfOqV9nVt8rbhPjKbNSXBEYbKLUUNZRN0DzybEDqtCxryYuC0TBlhpw/zPtmuv+BbyQ0A9riftYk5eWDc8777tcuHKBoaa8Dr2JuB/tsSsryldDPffIanHNJ+Fmce1w57WsNUp7qkk9xAl6W1QHiIcQ6RZXexPJ9iIFUdVR4PX68xrausUl8rhIysCYb6pJEdDOap24LTb9OSsCKQcugMJNcXlzLCrcdotYjx0KzUkHmGsZvrPmMOuFuSyk0IAlmPJdf1712NxXEzf3VVgQ16JLXJW++UdW/MbFgtICS+IOWJvPn/+1uGn+ua7/Vdz+vJSxqS+LS7XPMsN8f13ckXqMxuXETaElzOCNz2kchDkfeGMNooTCm6fXuSJbkmu1uOZPhQ5YJPiuWq87r76+03q5H+6pJS7VObXTGgNd4rJj1hoG234q5IK+IC4+SWETmnz1hRlQDl3UD/WU9jiexdXW7xZXr7nerwbkh2OxvryP/rzMtU1xQRZoK+ssrS3XuZS46rlHNolbniwYvEUsXgsTQyLkrYPgGDVIgyQBiYtrWcG2DqO6CMjCW6I5tnG4zLwHzolqZXFbuY7g+o21eY99l9yijLmouFKoJXGhcE3ckerg6iITVX0UmJCO5hWvcfyuNQe0N8WdqLPo/+mg5GgJ38xLiijPaqASV7aNTDV3n5W+x+3iyv7d4u4dSzrn5+HiOrvExXV2iYvr7JIfJa5zLYTwB5LOhYwgblZlAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NSelectItem.Target>
+            </uix:NSelectItem>
+            <uix:NSelectItem DisplayName="Select Item 'Выберите город'" sap:VirtualizedContainerService.HintSize="337.6,167.2" sap2010:WorkflowViewState.IdRef="NSelectItem_2" ScopeIdentifier="a949d64a-4757-42ec-8f5f-bb785e429547" Timeout="60" Version="V3">
+              <uix:NSelectItem.Item>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">city</CSharpValue>
+                </InArgument>
+              </uix:NSelectItem.Item>
+              <uix:NSelectItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="50">
+                  <x:String>Москва, Москва (город федерального значения)</x:String>
+                  <x:String>Санкт-Петербург, Санкт-Петербург (город федерального значения)</x:String>
+                  <x:String>Нижний Новгород, Нижегородская область</x:String>
+                  <x:String>Самара, Самарская область</x:String>
+                  <x:String>Челябинск, Челябинская область</x:String>
+                  <x:String>Краснодар, Краснодарский край</x:String>
+                  <x:String>Екатеринбург, Свердловская область</x:String>
+                  <x:String>Уфа, Республика Башкортостан</x:String>
+                  <x:String>Пермь, Пермский край</x:String>
+                  <x:String>Ростов-на-Дону, Ростовская область</x:String>
+                  <x:String>Саратов, Саратовская область</x:String>
+                  <x:String>Омск, Омская область</x:String>
+                  <x:String>Новосибирск, Новосибирская область</x:String>
+                  <x:String>Воронеж, Воронежская область</x:String>
+                  <x:String>Волгоград, Волгоградская область</x:String>
+                  <x:String>Барнаул, Алтайский край</x:String>
+                  <x:String>Тюмень, Тюменская область</x:String>
+                  <x:String>Казань, Республика Татарстан</x:String>
+                  <x:String>Белгород, Белгородская область</x:String>
+                  <x:String>Красноярск, Красноярский край</x:String>
+                  <x:String>Тольятти, Самарская область</x:String>
+                  <x:String>Ижевск, Удмуртская республика</x:String>
+                  <x:String>Курган, Курганская область</x:String>
+                  <x:String>Оренбург, Оренбургская область</x:String>
+                  <x:String>Киров, Кировская область</x:String>
+                  <x:String>Пенза, Пензенская область</x:String>
+                  <x:String>Новокузнецк, Кемеровская область</x:String>
+                  <x:String>Томск, Томская область</x:String>
+                  <x:String>Калининград, Калининградская область</x:String>
+                  <x:String>Ульяновск, Ульяновская область</x:String>
+                  <x:String>Кемерово, Кемеровская область</x:String>
+                  <x:String>Иркутск, Иркутская область</x:String>
+                  <x:String>Чебоксары, Чувашская республика</x:String>
+                  <x:String>Сургут, Ханты-Мансийский автономный округ - Югра</x:String>
+                  <x:String>Липецк, Липецкая область</x:String>
+                  <x:String>Набережные Челны, Республика Татарстан</x:String>
+                  <x:String>Тула, Тульская область</x:String>
+                  <x:String>Брянск, Брянская область</x:String>
+                  <x:String>Тамбов, Тамбовская область</x:String>
+                  <x:String>Ставрополь, Ставропольский край</x:String>
+                  <x:String>Рязань, Рязанская область</x:String>
+                  <x:String>Курск, Курская область</x:String>
+                  <x:String>Ярославль, Ярославская область</x:String>
+                  <x:String>Нижневартовск, Ханты-Мансийский автономный округ - Югра</x:String>
+                  <x:String>Смоленск, Смоленская область</x:String>
+                  <x:String>Магнитогорск, Челябинская область</x:String>
+                  <x:String>Нижний Тагил, Свердловская область</x:String>
+                  <x:String>Тверь, Тверская область</x:String>
+                  <x:String>Воркута (а/п), Республика Коми</x:String>
+                  <x:String>Петрозаводск, Республика Карелия</x:String>
+                </scg:List>
+              </uix:NSelectItem.Items>
+              <uix:NSelectItem.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.gismeteo.ru/diary/" DesignTimeRectangle="1076, 412, 219, 31" DesignTimeScaleFactor="1.25" ElementType="DropDown" FriendlyName="'Москва, Москва'" FullSelectorArgument="&lt;webctrl id='sd_city' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='sd_city' tag='SELECT' type='' class='selector_select' aaname='Выберите город:' /&gt;" Guid="537148d8-330c-4514-8a57-5381cade56f4" InformativeScreenshot="27f13dc571d414638565865ddc899721.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='GISMETEO.RU: Погода в России. Точный прогноз погоды (метеопрогноз) на сегодня, завтра, выходные, неделю, месяц.' /&gt;" SearchSteps="FuzzySelector" Version="V1" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target DesignTimeRectangle="1076, 384, 149, 20" ElementType="Text" FriendlyName="'Выберите город'" FullSelectorArgument="&lt;webctrl aaname='Выберите город:' parentid='selector_block2' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Выберите город:' parentid='selector_block2' tag='LABEL' type='' class='' check:innerText='Выберите город:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJkAAAAYCAYAAADpsF/HAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAMTSURBVGhD7ZY7UsMwEIa5E3fKKWhyicxQ0KaloKOmoKWiZKipqYUfevz7dOzYMAlbfEUsebXa/STn5vM7pSDYkpAs2JyQLNickCzYnJAs2JyQLNgcItnz4T7d7jye0jPMX4f3tFfXOqaHD21+cGnMlKxnxea/PinxM4d3/Z3g4lgg2X3aPX6RIMsoN1jcWNeOLtndS3qD5yPwWau3zFd6uOPPDOqtlaX6eEm77ncv7NvjMY+N7F/Zuxl+CLjsJH92S5K5ee3+OV0L9qjEkODfB6hFxtpHBfLgtHdlXF7rVr8uHx7T6ovYm37Y3YsHPGk5yDiLJGsNO0Oy4fcx7Q9UsAIVSCl0AdZ1C9JT5hqSkfdnSWb9r5QHgTAlmTOOgvNDKmD99OpkHlyNsyRzMU7vTMlIYSDZloNWRNgAl5a826HKl+dqkvGGssa0HHD/I37Ocn7FkH0EDxbEwDzzHq1a4vMaHw4OCiVqNDxvOahzt5LMvGEWS8aSgiKOa1lryAJozR5ht7BoLjY0c7Jk2g1Pn0uBMp5kzhjPxW6wrJ0myIj/pcIc7Bg6i/74t2YrzSFAQ0zJeNN4YexPUWWygCwma2DNpRuzYpj5QiwLKp/+rpBMuamtMbuWvCZSuoY2ph+UdSQzXpYnZkqyjhKLF63+/mvJSvwxr5AMxmp+NIe/k4wnbUpl/C7vQeHH5niFodT8RbHZp0ARo4gwWzL1M3MinmTOGM9F9qUga2f3WO6jxmVz15FsklLoMyTDGwqS1URRi6g0geQP+bTn+X0umbY+K6AtmZ6zeYgQTzKsLcbF3PMeW24dkDc+r/FrXvRQiBrB+vzwaDVSe5RZJFlbFAthkQukFR02zKFFByE5qqAGRTwmGa6lFbDHk0xIi/DDh7iS0XGBIZMK24tXpyEPb11Ojr2qZLQYU5KdcLLFhmSSBZEfayARhMUlpxHHvBjw3JVsQNaC3wACyEOVbECpMcuZ5sYOpCW5OOBQ9y0lu3QsQa6d6QMwkyKZV8dT5mRCsisgJPtFQrKVJFuZkOwKCMmCf05KP5unlNa2guEdAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NSelectItem.Target>
+            </uix:NSelectItem>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.CloseMode>
+        <InArgument x:TypeArguments="uix:NAppCloseMode">
+          <CSharpValue x:TypeArguments="uix:NAppCloseMode" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4">0</CSharpValue>
+        </InArgument>
+      </uix:NApplicationCard.CloseMode>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-9, -9, 1938, 1038" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="40a4bde4feabee6794393bdda873a80c.png" Selector="&lt;html app='chrome.exe' title='Новая вкладка' /&gt;" Url="chrome://newtab/" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="433.6,95.2" sap2010:WorkflowViewState.IdRef="MessageBox_2">
+      <ui:MessageBox.Text>
+        <InArgument x:TypeArguments="x:Object">
+          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_2">"The end"</CSharpValue>
+        </InArgument>
+      </ui:MessageBox.Text>
+    </ui:MessageBox>
+  </Sequence>
+</Activity>
