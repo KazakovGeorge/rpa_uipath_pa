@@ -1,0 +1,445 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="data_entry" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_weatherDt" Type="InArgument(sd:DataTable)" />
+    <x:Property Name="in_month" Type="InArgument(x:String)" />
+    <x:Property Name="in_year" Type="InArgument(x:String)" />
+    <x:Property Name="in_city" Type="InArgument(x:String)" />
+  </x:Members>
+  <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
+  <sap:VirtualizedContainerService.HintSize>1063.2,4308.8</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="38">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Activities.Contracts</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.CV</x:String>
+      <x:String>UiPath.Shared.ObjectLibrary</x:String>
+      <x:String>UiPath.CV.Activities</x:String>
+      <x:String>UiPath.CV.Activities.Interfaces</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="61">
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Management.Automation</AssemblyReference>
+      <AssemblyReference>UiPath.Activities.Contracts</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities.Design</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="data_entry" sap:VirtualizedContainerService.HintSize="1073.6,4244" sap2010:WorkflowViewState.IdRef="Sequence_12">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Chrome: Вход" sap:VirtualizedContainerService.HintSize="1011.2,4120.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="447cf4a9-e9ef-4fe9-aa8f-db89086859a8" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="977.6,3894.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="ss:SecureString" Modifiers="ReadOnly" Name="userPasswordCred" />
+              <Variable x:TypeArguments="x:String" Name="userLogin" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NCheckState DisplayName="Check App State 'Имя пользователя'" sap:VirtualizedContainerService.HintSize="915.2,444.8" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="447cf4a9-e9ef-4fe9-aa8f-db89086859a8" Timeout="5" Version="V3">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Целевой объект появляется" sap:VirtualizedContainerService.HintSize="462.4,216.8" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Sequence DisplayName="Login" sap:VirtualizedContainerService.HintSize="400,92.8" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Имя пользователя'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="337.6,228" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="447cf4a9-e9ef-4fe9-aa8f-db89086859a8" Text="george.kazakov@yandex.ru" Version="V3">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable BrowserURL="https://rpa.maximkozhin.ru/main/auth/login" DesignTimeRectangle="744, 343, 450, 43" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'INPUT loginform-username'" FullSelectorArgument="&lt;webctrl id='loginform-username' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='loginform-username' tag='INPUT' type='text' class='form-control' aaname='Имя пользователя' /&gt;" Guid="40fcf1bd-1b60-4bdb-8273-6ca6816fe40e" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAcYAAAAvCAYAAAB5XmrXAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAHISURBVHhe7dm7rqpQGIXR8/7PpqXG3kIbpNF4d53MHSG/e8cXgDGSWYBYf1nwrwEAI2EEgOJPGLuua5vNpi2Xy7ZYLMzMzCa3NC6tS/N++wjjdrttq9Wq7Xa7djgcWt/3ZmZmk1sal9aleWlfNYYx1cwD+cPpdGrn87ldLpd2vV7NzMwms7QtjUvr0ry0r54cxzDmSLnf738efjwe7fV6mZmZTXZpXZqX9qWBgzGMed96PB7b8/l83wGAaUvzcnJMAwdjGPMxMkfMVBQA5iDNS/vSwMFHGO/3+/sKAOYh7fsaxrxvBYA5SfuEEQDehBEACmEEgEIYAaAQRgAohBEACmEEgEIYAaAQRgAohBEACmEEgEIYAaAQRgAohBEACmEEgEIYAaAQRgAohBEACmEEgEIYAaAQRgAohBEACmEEgEIYAaAQRgAohBEACmEEgEIYAaAQRgAovoZxuVy22+32vgKAeUj70sDBGMbNZtO6rntfAcA8pH1p4GAMY35Yr9depwIwG2le2lcPhmMYY7vd/jzQ9317Pp/vuwAwLWlcWpfmpX3VRxhjOFLmfWs+RpqZmU1tady3T4h/wggAcyaMAFAIIwCMWvsP7ZJtkYHNVdIAAAAASUVORK5CYII=" InformativeScreenshot="73384a9a1bcb14bd3c44a81f31337a91.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Вход' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target DesignTimeRectangle="744, 312, 172, 25" ElementType="Text" FriendlyName="'Имя пользователя'" FullSelectorArgument="&lt;webctrl tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='control-label' aaname='Имя пользователя' check:innerText='Имя пользователя' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NTypeInto.Target>
+                    </uix:NTypeInto>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Пароль'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="337.6,228" sap2010:WorkflowViewState.IdRef="NTypeInto_2" IsPassword="True" ScopeIdentifier="447cf4a9-e9ef-4fe9-aa8f-db89086859a8" Version="V3">
+                      <uix:NTypeInto.SecureText>
+                        <InArgument x:TypeArguments="ss:SecureString">
+                          <CSharpValue x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpValue`1_26">new System.Net.NetworkCredential("","george.kazakov@yandex.ru").SecurePassword</CSharpValue>
+                        </InArgument>
+                      </uix:NTypeInto.SecureText>
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable BrowserURL="https://rpa.maximkozhin.ru/main/auth/login" DesignTimeRectangle="744, 435, 450, 43" DesignTimeScaleFactor="1.25" ElementType="InputBoxPassword" FriendlyName="'INPUT loginform-password'" FullSelectorArgument="&lt;webctrl id='loginform-password' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='loginform-password' tag='INPUT' type='password' class='form-control' aaname='Пароль' /&gt;" Guid="3fcbab9b-7d08-41a4-8521-b703c52a945c" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAcYAAAAvCAYAAAB5XmrXAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAHISURBVHhe7dm7rqpQGIXR8/7PpqXG3kIbpNF4d53MHSG/e8cXgDGSWYBYf1nwrwEAI2EEgOJPGLuua5vNpi2Xy7ZYLMzMzCa3NC6tS/N++wjjdrttq9Wq7Xa7djgcWt/3ZmZmk1sal9aleWlfNYYx1cwD+cPpdGrn87ldLpd2vV7NzMwms7QtjUvr0ry0r54cxzDmSLnf738efjwe7fV6mZmZTXZpXZqX9qWBgzGMed96PB7b8/l83wGAaUvzcnJMAwdjGPMxMkfMVBQA5iDNS/vSwMFHGO/3+/sKAOYh7fsaxrxvBYA5SfuEEQDehBEACmEEgEIYAaAQRgAohBEACmEEgEIYAaAQRgAohBEACmEEgEIYAaAQRgAohBEACmEEgEIYAaAQRgAohBEACmEEgEIYAaAQRgAohBEACmEEgEIYAaAQRgAohBEACmEEgEIYAaAQRgAohBEAiq9hXC6X7Xa7va8AYB7SvjRwMIZxs9m0ruveVwAwD2lfGjgYw5gf1uu116kAzEaal/bVg+EYxthutz8P9H3fns/n+y4ATEsal9aleWlf9RHGGI6Ued+aj5FmZmZTWxr37RPinzACwJwJIwCMWvsPqIVsTdPxc8sAAAAASUVORK5CYII=" InformativeScreenshot="0341185faa6e220779cef8936cc92606.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Вход' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target DesignTimeRectangle="744, 404, 68, 25" ElementType="Text" FriendlyName="'Пароль'" FullSelectorArgument="&lt;webctrl aaname='Пароль' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Пароль' tag='LABEL' type='' class='control-label' check:innerText='Пароль' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEgAAAAdCAYAAAAJrioDAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAL3SURBVGhD7Za/a9tAFMf7P2nSYDAEDBk8WUsFgZgONYUIAg2FiM7BWYwHkyG4UEohJhDkyYGQIZAuzhAUCGgIyqQhcFBw6WAwfHsnPZ3PiZxr6uZHy33gDX56Pt19dPekVzDcixGkwQjSYARpMII0GEEajCANRpCGWUHnLViWpY+1AIz+8r9jBGmYK6h5MsLouxoRem+NICmodU45CUOwViBowhD2O/DfuaiU6PqSg8ZWgGhENYKbAF46tove9Rhxv4n6sp3Wl1ebCK7GVKhwM8SXjw04S9m49rKLjd1TJD/pumSE4026d1G0Q6pT1mC1kGfvY3FB4yGauZjbUesgzNctBVlwXruw1ToRJQ9BQrWc8UUX7txx+eJmJKkLL4hnFcRh3wIMLhOMJ9nv5MCTAvwj2kaKIMty+BFO0qObnDThUN7eHiLzmaC3SrVcXO+S8VqG+HBaW+WLnu65GL2VLO/185mFaFHtswu6gyJDTlgVtHWqLE4Zt9pFJFJJgAbVuntxWpUxwuAD1Zb47qSsKkM+kBcjSOlBea9Qo1CQnHBG2M7radLqPM7SEsm0lh/JG0rKsW10LiinFTQb5Rrvb+3BbN/kLCiIYbCeNVoxucobH62dDjrbHqo0zpMIOsvrlZxWUBnOigtXBL0s0qjxXUytQrCYIGXR1d30cGQo+UJBm8f8sORM+4c8Ykrt7xyx6FP1Tk4vaPaIxXt1you3LCU5f0/QDt1uMsKw7chxCgWJJn0Yg/HGG+1NG7pdtJA5TVo09B8sAbvi49LbbtrkBQ8U9PUxBE0idGuUU6O2gQ16CxUJskvKls6DixjI48HhjTpf+J2g1zzre0q+iu4l/Tflz46YvT7I1kYs3qSTU7TWK7QL+E3fdzHkF5P97IkUCfIOIoT7PuppUxe9a86HIgvR27r1ocgbaUzfQOzIR1mMWarA34+V3SN4aJNuwP88BFP6j2BW0GOiHjE54ZePEaTBCNJgBGl4OkH/KEaQBiNIgxF0L8Av+QoeSUl5oEgAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NTypeInto.Target>
+                    </uix:NTypeInto>
+                    <uix:NClick ClickType="Single" DisplayName="Click 'Войти'" sap:VirtualizedContainerService.HintSize="337.6,167.2" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="447cf4a9-e9ef-4fe9-aa8f-db89086859a8" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://rpa.maximkozhin.ru/main/auth/login" DesignTimeRectangle="927, 502, 85, 43" DesignTimeScaleFactor="1.25" ElementType="Button" FriendlyName="'Войти'" FullSelectorArgument="&lt;webctrl tag='BUTTON' type='submit' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='submit' class='btn btn-primary' aaname='Войти' check:innerText='Войти' /&gt;" Guid="434c0398-25ab-45cc-bc79-6a15eafa9312" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFkAAAAvCAYAAACIcGZzAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAO1SURBVHhe7ZvNShtRFMf7RIXWF+gL+AI+QTaVrrrQXXcBgyuXdqFFKMU2UkwKJSUUdTFMxRCKsa01miaEMBhNaDQJ4d977p2ZTCaj5vPakXPgT5hzP2byu+eeORMyj8A2dWPIGqwP8rZ5grmlT3j6YgOPn79hDSBiRcyIXZD1QF768A3PFt/jycstzCwkhJKsgZSQzIgdMfSbC5lWgTox3HGUkAz9Ee1CpnBXERw0mDWoiCGx9JoLmfIKR/EklJAsveZCpgQePIg1rIil1xjyFMSQNYghaxBD1iCGrEEMWYMYsgaFFnK8LC6yVsGi60sjXhG+8zIinn7/g6YL2azbs/Va8+oaue8/MB80ZkBFMg0xUwuZtIm5hV3Mpy3UhMc6zAb2v09pgCxAfD3A4rsDRNMFJPcryNU68hzN0glmg8YNJBNv89doqqmATgdW/nSshZuWtEA2tv1thtraqCPe43+YuifISSwft1TbR6/fxPpRHbW2vARptYtLJLfSnj4iH9MCXVlY9vhI81lKIcIqBXF8CONKHQaaPV5dR/9iz36pounp520bVvcGefVM7PPOJdZdn4juMu39Fn4fnWJFppeynVrEHMku6EDIayUUqStJQk4jsqHSFCll0Zgq1u3jxQ1DpqpAyDF7gWiuUEKOGXi1V1U3qaPDrv+zipxi1uz6ZH/7C1slt2roh2wv0F8LBrVJyE7bTWOUgiAv/xS+dh3GmfgMB+QAazewI6oCb1/1ZRtIxjzjfW2p1+rYD0xtbRXtsm0cyGtlFIWnuG+qtnBA7lYXToWROhZ5VwRes1xwq4GbIHjncXZET1870ptnv+T2Hw+yiSSlFVFr03WFCnJQTp7du5TnKWYMeTwqZGdrx71RPiLkiFFXO8I+T+gh07akoKkdq7wcJVjDpAt6stusyDloazt9R4LcrGI1doKcqGroepza/eFEclZF8sy2emLrv/H9QobuiP4bX6WM1Ln4tLe2038kyMKfompHwu5vCwVkb05e2SshlW+oGrQtSjj3S6XtiO2gmC/YJVwJmQuqo8RC+Uu4dkfMcY2dTWe8p21YyOJpsSnOm9vprcdDBDnA2i1Yf0qIrvjH7CK6P+DDCLXZqaavbeicrMb4f1gKB2SWFEPWIIasQQxZgxiyBjFkDWLIGsSQNYghaxBD1qAbIfOfwCelW/4Ezq8zTEa3vs7AL+ZMQne8mEPGr5iNqgFfMXOMVoHCnfIKJXDW3SJWxMwfwY71QWabvDFkDcaQp27APxWUr3TiwoQAAAAAAElFTkSuQmCC" InformativeScreenshot="e2c9a4ccf737c2e8c447c39a05943438.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Вход' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                  </Sequence>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Целевой объект не появляется" sap:VirtualizedContainerService.HintSize="400,116" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="https://rpa.maximkozhin.ru/main/auth/login" DesignTimeRectangle="584, 289, 450, 43" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'INPUT loginform-username'" FullSelectorArgument="&lt;webctrl id='loginform-username' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='loginform-username' tag='INPUT' type='text' class='form-control' aaname='Имя пользователя' /&gt;" Guid="343a9660-41e2-4410-8336-ab7e953e0cf2" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAcYAAAAvCAYAAAB5XmrXAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAHISURBVHhe7dm7rqpQGIXR8/7PpqXG3kIbpNF4d53MHSG/e8cXgDGSWYBYf1nwrwEAI2EEgOJPGLuua5vNpi2Xy7ZYLMzMzCa3NC6tS/N++wjjdrttq9Wq7Xa7djgcWt/3ZmZmk1sal9aleWlfNYYx1cwD+cPpdGrn87ldLpd2vV7NzMwms7QtjUvr0ry0r54cxzDmSLnf738efjwe7fV6mZmZTXZpXZqX9qWBgzGMed96PB7b8/l83wGAaUvzcnJMAwdjGPMxMkfMVBQA5iDNS/vSwMFHGO/3+/sKAOYh7fsaxrxvBYA5SfuEEQDehBEACmEEgEIYAaAQRgAohBEACmEEgEIYAaAQRgAohBEACmEEgEIYAaAQRgAohBEACmEEgEIYAaAQRgAohBEACmEEgEIYAaAQRgAohBEACmEEgEIYAaAQRgAohBEACmEEgEIYAaAQRgAovoZxuVy22+32vgKAeUj70sDBGMbNZtO6rntfAcA8pH1p4GAMY35Yr9depwIwG2le2lcPhmMYY7vd/jzQ9317Pp/vuwAwLWlcWpfmpX3VRxhjOFLmfWs+RpqZmU1tady3T4h/wggAcyaMAFAIIwCMWvsP7ZJtkYHNVdIAAAAASUVORK5CYII=" InformativeScreenshot="68b917ee686d03679fd72915d0495b87.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Вход' /&gt;" SearchSteps="FuzzySelector" Version="V1" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target DesignTimeRectangle="584, 258, 172, 25" ElementType="Text" FriendlyName="'Имя пользователя'" FullSelectorArgument="&lt;webctrl tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='control-label' aaname='Имя пользователя' check:innerText='Имя пользователя' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
+            <Sequence DisplayName="Enter" sap:VirtualizedContainerService.HintSize="915.2,3284.8" sap2010:WorkflowViewState.IdRef="Sequence_13">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NClick ClickType="Single" DisplayName="Click 'Добавить данные'" sap:VirtualizedContainerService.HintSize="577.6,167.2" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="447cf4a9-e9ef-4fe9-aa8f-db89086859a8" Version="V3">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://rpa.maximkozhin.ru/main/default/index" DesignTimeRectangle="257, 448, 206, 50" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'Добавить данные'" FullSelectorArgument="&lt;webctrl aaname='Добавить данные' parentid='wrap' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Добавить данные' parentid='wrap' tag='A' type='' class='' check:innerText='Добавить данные' /&gt;" Guid="cc127a8c-cfd3-4b33-8891-f2dd98a8d28c" ImageBase64="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" InformativeScreenshot="1a4d48676b85cd799fad75c2b99893d4.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='RPA Demo' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+                </uix:NClick.Target>
+              </uix:NClick>
+              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="577.6,2952.8" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                <ui:ForEachRow.Body>
+                  <ActivityAction x:TypeArguments="sd:DataRow">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Текст" sap:VirtualizedContainerService.HintSize="544,2825.6" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                      <Sequence.Variables>
+                        <Variable x:TypeArguments="x:String" Name="dateStr" />
+                        <Variable x:TypeArguments="x:String" Name="wind" />
+                        <Variable x:TypeArguments="x:String" Name="windDirection" />
+                      </Sequence.Variables>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:InvokeCode ContinueOnError="{x:Null}" Code="// Конвертация месяца из текста в число&#xD;&#xA;var myDict = new Dictionary&lt;string, string&gt;&#xD;&#xA;{&#xD;&#xA;    { &quot;Январь&quot;, &quot;01&quot; },&#xD;&#xA;    { &quot;Февраль&quot;, &quot;02&quot; },&#xD;&#xA;    { &quot;Март&quot;, &quot;03&quot; },&#xD;&#xA;    { &quot;Апрель&quot;, &quot;04&quot; },&#xD;&#xA;    { &quot;Май&quot;, &quot;05&quot; },&#xD;&#xA;    { &quot;Июнь&quot;, &quot;06&quot; },&#xD;&#xA;    { &quot;Июль&quot;, &quot;07&quot; },&#xD;&#xA;    { &quot;Август&quot;, &quot;08&quot; },&#xD;&#xA;    { &quot;Сентябрь&quot;, &quot;09&quot; },&#xD;&#xA;    { &quot;Октябрь&quot;, &quot;10&quot; },&#xD;&#xA;    { &quot;Ноябрь&quot;, &quot;11&quot; },&#xD;&#xA;    { &quot;Декабрь&quot;, &quot;12&quot; }&#xD;&#xA;};&#xD;&#xA;&#xD;&#xA;if (int.Parse(day) &lt; 10)&#xD;&#xA;{&#xD;&#xA;&#x9;day = &quot;0&quot; + day;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;date = day + myDict[month] + year;&#xD;&#xA;" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="481.6,174.4" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
+                        <ui:InvokeCode.Arguments>
+                          <InArgument x:TypeArguments="x:String" x:Key="day">
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_32">row["Число"].ToString()</CSharpValue>
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="month">
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_29">in_month</CSharpValue>
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="year">
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_33">in_year</CSharpValue>
+                          </InArgument>
+                          <OutArgument x:TypeArguments="x:String" x:Key="date">
+                            <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_10">dateStr</CSharpReference>
+                          </OutArgument>
+                        </ui:InvokeCode.Arguments>
+                      </ui:InvokeCode>
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Дата показаний'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="481.6,228" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="447cf4a9-e9ef-4fe9-aa8f-db89086859a8" Version="V3">
+                        <uix:NTypeInto.Target>
+                          <uix:TargetAnchorable BrowserURL="https://rpa.maximkozhin.ru/main/default/add" DesignTimeRectangle="490, 432, 1181, 43" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'INPUT result-date'" FullSelectorArgument="&lt;webctrl id='result-date' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='result-date' tag='INPUT' type='date' class='form-control' aaname='Дата показаний' /&gt;" Guid="e7fb9100-8ef4-4307-a764-36feb24c4719" ImageBase64="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" InformativeScreenshot="bc48bb60f0ae892ca6f6bd77aaf51521.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Добавление показателей' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                <uix:Target DesignTimeRectangle="490, 401, 149, 25" ElementType="Text" FriendlyName="'Дата показаний'" FullSelectorArgument="&lt;webctrl tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='control-label' aaname='Дата показаний' check:innerText='Дата показаний' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:NTypeInto.Target>
+                        <uix:NTypeInto.Text>
+                          <InArgument x:TypeArguments="x:String">
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_37">dateStr</CSharpValue>
+                          </InArgument>
+                        </uix:NTypeInto.Text>
+                      </uix:NTypeInto>
+                      <uix:NSelectItem DisplayName="Select Item 'Город'" sap:VirtualizedContainerService.HintSize="337.6,167.2" sap2010:WorkflowViewState.IdRef="NSelectItem_1" ScopeIdentifier="447cf4a9-e9ef-4fe9-aa8f-db89086859a8" Version="V3">
+                        <uix:NSelectItem.Item>
+                          <InArgument x:TypeArguments="x:String">
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_39">in_city</CSharpValue>
+                          </InArgument>
+                        </uix:NSelectItem.Item>
+                        <uix:NSelectItem.Items>
+                          <scg:List x:TypeArguments="x:String" Capacity="8">
+                            <x:String>---Укажите город---</x:String>
+                            <x:String>Апатиты</x:String>
+                            <x:String>Балаково</x:String>
+                            <x:String>Волхов</x:String>
+                            <x:String>Кировск</x:String>
+                            <x:String>Москва</x:String>
+                            <x:String>Санкт-Петербург</x:String>
+                            <x:String>Череповец</x:String>
+                          </scg:List>
+                        </uix:NSelectItem.Items>
+                        <uix:NSelectItem.Target>
+                          <uix:TargetAnchorable BrowserURL="https://rpa.maximkozhin.ru/main/default/add" DesignTimeRectangle="490, 524, 1181, 43" DesignTimeScaleFactor="1.25" ElementType="DropDown" FriendlyName="'---Укажите город---'" FullSelectorArgument="&lt;webctrl id='result-city_id' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='result-city_id' tag='SELECT' type='' class='form-control' aaname='Город' /&gt;" Guid="311e0d10-39d3-4120-b641-7666ca71f792" InformativeScreenshot="f0bb0bc080f3b3c0705db42f9878329d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Добавление показателей' /&gt;" SearchSteps="FuzzySelector" Version="V1" Visibility="Interactive">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                <uix:Target DesignTimeRectangle="490, 493, 54, 25" ElementType="Text" FriendlyName="'Город'" FullSelectorArgument="&lt;webctrl aaname='Город' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Город' tag='LABEL' type='' class='control-label' check:innerText='Город' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADoAAAAdCAYAAAD7En+mAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAQySURBVFhH7VZbSxtBFPZH7dM+CKbFVpH6tA+NWLwUIVYNiJdiIwg+lBVLCAiCRVBEMAghefGCiCgVgg+WrSAJiIIQUAwqEYSAcLrf7MzuxOzWkF5YrR98MJezs/PNOXPO1NB/gmehTw3PQp8abKG3t7d0eHhIhmFUTNjf3NzwFfyNmmw2Sz09PVRfX181Ozs7KZ1O8yX9iZqGhgbXzVfDpaUlvqz/UOO24WqJQzs6OuJL+wu/FNrW1kbj4+O0sLBAuq5TV1eXq53M+fl5vrS/4Co0HA5TLpdjBkhSuMci6VxcXNDo6GjZN4LDw8PMzm8oE4p7dnd3Rzs7O2UehIdTqRT7cH19nZqamkrmwYHBQTbPcJ6ksKKQorRQ/KRIxymdOhpVs69QXbtOyaMiN3SQTy9Q5INGdew7lV4Fh2h2O0fllkSFjQhby43hVJ5bWSgROjk5yURGo1F7LBgM0sDAABMpxtCHh5eXl+0xwca3IWdTtlCFtGALqdJGGGvDlLQCx0SRjK8uNpxazCgTm0uEXG1BT6EQhM3Do+hDGGolhJ+dnVGxWGSJJhQKsXkcCgDRYg0wEHhN0e98S5JQRdFINz1TuCpQblsnjY+rE3uWgNM4dYix/jhlzgtUOD+m1QmNf//GWZdj7wtfuy9JTJb0P0+h8M7p6SnLnM3NzUzcysoKa2Me44uLi+wwcCgY29/fZ/VTrAEGAgFSpw1rdVno52+SR/KU7OPjb2YpY4443kGYW1YMV6s0xNew12U4pvi7e+OVCMWmE4kEa8/NzTFvijmZEA+iPT09TdfX1yXzEOp2wooZejKMGB9XooQZub93Z9lYMCgq1hDrAoVNivDxyEbBGqtEKDyFEoI2vDQ1NcXaCM3Ly0sWquj39/fTycmJ3Qbk+/uvhDqJSIqAh4QiLFFGUDPRh3dFQhobG2OGqKXo47mIEBdtQM7OnqH7aZP4uZtwwk6Ebj4VLt844Bq6BVr9yL9vj5Odzyrx6MHBgZ1FkZB2d3ftzWuaZrdxT7e2tlgbXkckiDkwEHhBetojGa0dU/4qT5mlsJ1dVeFpydY9GanOutlZO5kNrTnHV5FQ3E88DNCGMNw93FUxDyK04Xk84tFHrYX3ZRuv8qLWqnzDEs3ysnrObU3kTK8+VF4cz1dC61oAtlCUDZQScTfxOkKI4oUEQSgteBWNjIywefECEuEu6P5gME84kSFjOUIdL9E3HwLvPR4MP+Kk33swRM1IEJa/LRTEPYTHIBJ9vHyQcJCIIEyUmtbWVlZ+cADy9+Cgh9D7yahaOEIdEffhZlMiFEkJGReexX0VwgQhfGZmhh0GPCzfXcFHIVQwFosxMQBKiQhdHAAIz+NQ3L59VEJBeAulBZ6Fl5GscB/Fq8iLf1totfAUWi1LhPoIz0KrpW+Fdnd3059kb28vE+svDtJPGcO8xiNNtFQAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:NSelectItem.Target>
+                      </uix:NSelectItem>
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Температура'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="337.6,228" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="447cf4a9-e9ef-4fe9-aa8f-db89086859a8" Version="V3">
+                        <uix:NTypeInto.Target>
+                          <uix:TargetAnchorable BrowserURL="https://rpa.maximkozhin.ru/main/default/add" DesignTimeRectangle="490, 554, 1181, 43" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'INPUT result-temperature'" FullSelectorArgument="&lt;webctrl id='result-temperature' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='result-temperature' tag='INPUT' type='number' class='form-control' aaname='Температура' /&gt;" Guid="ecc72581-6087-4cb9-aaae-99e562cd2d34" ImageBase64="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" InformativeScreenshot="7dd0523b4da819321d5a43d5c64cf621.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Добавление показателей' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                <uix:Target DesignTimeRectangle="490, 523, 120, 25" ElementType="Text" FriendlyName="'Температура'" FullSelectorArgument="&lt;webctrl aaname='Температура' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Температура' tag='LABEL' type='' class='control-label' check:innerText='Температура' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:NTypeInto.Target>
+                        <uix:NTypeInto.Text>
+                          <InArgument x:TypeArguments="x:String">
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_55">((float.Parse(row["День Температура"].ToString()) + float.Parse(row["Вечер Температура"].ToString()))/2).ToString()</CSharpValue>
+                          </InArgument>
+                        </uix:NTypeInto.Text>
+                      </uix:NTypeInto>
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Давление'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="481.6,228" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="447cf4a9-e9ef-4fe9-aa8f-db89086859a8" Version="V3">
+                        <uix:NTypeInto.Target>
+                          <uix:TargetAnchorable BrowserURL="https://rpa.maximkozhin.ru/main/default/add" DesignTimeRectangle="490, 678, 1181, 43" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'INPUT result-pressure'" FullSelectorArgument="&lt;webctrl id='result-pressure' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='result-pressure' tag='INPUT' type='number' class='form-control' aaname='Давление' /&gt;" Guid="d53505aa-6c30-40e9-9da9-96794c1a9d85" ImageBase64="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" InformativeScreenshot="1b122473bb092291cda8bbcf7dbe9a64.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Добавление показателей' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                <uix:Target DesignTimeRectangle="490, 647, 91, 25" ElementType="Text" FriendlyName="'Давление'" FullSelectorArgument="&lt;webctrl aaname='Давление' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Давление' tag='LABEL' type='' class='control-label' check:innerText='Давление' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAF8AAAAdCAYAAADM3LCSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAARzSURBVGhD7ZfRSxtZFMb7ty37IIH6ogj6IBZkC4sFwUKxFPokFAYWAoWAIBSUQmSIZpFa3IBUlNiwarEYlJSUVGxMaUpKxGA6+u2ZmXNnbmbuxG6jzMv94AM9c+Zm5nfmnnvvHWjFJg0/Rmn4MUrDj1EafozS8GOUhh+jNPwYpeHHKDX88w2s/v4b0hHOLlU5UasXqeGfLCKrgC6s4d+MlPCttwaDnsDWhya+NchHC15BNPybkRJ+ZX7EhZ9I4pBjOF1Ww7eqOFxKYfXPEZgJ93r67iCyM8soNzjHURX5B3w9aDv/yRyKXzhVqJiCqcp3PIH8KefZspoovzawMtTnXk/0w3xooHDU5ASS9A7p5C4HXRWTYtwkil1ijs53kRsW18iBsdqn29h4MubzGPoDqy+28dXiBJYCfh2FSb7pcQ7fOBoJn9aHNfEjQQ9T8c45rwN+H8zREWTI5gDDsp2Ywb6XT/o36V8LWYZfReGRNE6HB5Hbu3DTbgh+aXaQ42xprNZeCpkoHpPLqHGerTB8abHNzFc4SIqCT6ptLmOnWMEZV/bYnPB+cOUf8eXJ8DtfpvyCZxoVJbfHQVLrzUwov7YkxvbhtzZFXh+yZgVtO2hVkJ/kgowv4tiO3QB8SzUbvbEq2BrnGH14RZ75398m+Z4+rG3yh0AKwfdfpB/rMqEu8ENS5kbAt+rYN/o5PoVCneMkD/RACqVgTIJfNMS4BorS1PaLN40dG0Sv8K0DrIt288DA2n3+W4wlbVSypsyIijLqxs3ZA46F4F9g/5nomfSDco+Kgi/3/Lvuddlq+Arfm8bWXhPyT3ovL03XMPxrxnXMuTL8SEfDr8yP8f803sk2cuIeAb9rm2RLRe+EX3+FFSmpY32I+JoLYmrbfXx8GmvPk1g3JrypqYbv9/zMqOifFHu8iLK3PlJ+8MsidYVvL7LeuLKfYsdezH8V/ugCyh8XkOEcux1boEVX3KOCP6R6DvJcxJd/nBaVpZbznoNCKvhSzEwd+MWKKJSy7ZCsozn/xdK8zjRy3oeQ/dvvRWH4F3g3w+MGZ2tQMnypoLa6tp371GLEs48voOL8hgK+VCD/vaPlwT9r0DQa4MGGUzi09/ay5X3+y5ITa51I8J/v8kJHPTzp7wZ+Bv4ZnSvETDFn86h9qkpjjGHrEyeSVD3fX6fo/mc5fBZrmnWB2odt5De5oL8K3zM9y0e+qIIvL7gJOiMV6y4TUqtZQel1jrhygMTwpYF+2nbfkxYg2cNTWOGHuLbtiH25Y/vlAs/y6JW/3SWp4ANNAhXY/skWcHqEby+W/sRSwad62x9k1Faz45l7hU8DWScbyE2K3QpBfZhyDkuihanhB8yHrH3nwaigYu9/z8C7wMFLDd9VLT9HC79UBD5o5d9z2+oFPnWDUkdLU8O3ZTVKKPw11XmGcQ5aG/gsnWNC8K/tVd6iEn55rf8nDT9GafgxSsOPUQxfoasr7Vu2D58DV8KXl9q37DsecBG0LMeXP364bre1b8Vt/AdoDQUJZOl0OgAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:NTypeInto.Target>
+                        <uix:NTypeInto.Text>
+                          <InArgument x:TypeArguments="x:String">
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_56">((float.Parse(row["День Давление"].ToString()) + float.Parse(row["Вечер Давление"].ToString()))/2).ToString()</CSharpValue>
+                          </InArgument>
+                        </uix:NTypeInto.Text>
+                      </uix:NTypeInto>
+                      <ui:InvokeCode ContinueOnError="{x:Null}" Code="// Определение средней арифм. скорости ветра string out_wind&#xD;&#xA;&#xD;&#xA;//&#x9;Если скорость вретра не равно 0 (т.е в таблице только направление)&#xD;&#xA;if (AM.Length &gt; 2)&#xD;&#xA;{&#xD;&#xA;&#x9;// Срез &quot;м/с&quot;&#xD;&#xA;&#x9;AM = AM.Substring(0, AM.Length - 3);&#xD;&#xA;&#x9;PM = PM.Substring(0, PM.Length - 3);&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;// Срез &quot;НВ &quot;&#xD;&#xA;&#x9;AM = AM.Substring(AM.IndexOf(&quot; &quot;) + 1);&#xD;&#xA;&#x9;PM = PM.Substring(PM.IndexOf(&quot; &quot;) + 1);&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;out_wind = ((float.Parse(AM) + float.Parse(PM)) / 2).ToString();&#xD;&#xA;}&#xD;&#xA;else&#xD;&#xA;{&#xD;&#xA;&#x9;out_wind = &quot;0&quot;;&#xD;&#xA;}" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="481.6,174.4" sap2010:WorkflowViewState.IdRef="InvokeCode_2" Language="CSharp">
+                        <ui:InvokeCode.Arguments>
+                          <InArgument x:TypeArguments="x:String" x:Key="AM">
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_53">row["День Ветер"].ToString()</CSharpValue>
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="PM">
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_52">row["Вечер Ветер"].ToString()</CSharpValue>
+                          </InArgument>
+                          <OutArgument x:TypeArguments="x:String" x:Key="out_wind">
+                            <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_11">wind</CSharpReference>
+                          </OutArgument>
+                        </ui:InvokeCode.Arguments>
+                      </ui:InvokeCode>
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Скорость ветра'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="481.6,228" sap2010:WorkflowViewState.IdRef="NTypeInto_6" ScopeIdentifier="447cf4a9-e9ef-4fe9-aa8f-db89086859a8" Version="V3">
+                        <uix:NTypeInto.Target>
+                          <uix:TargetAnchorable BrowserURL="https://rpa.maximkozhin.ru/main/default/add" DesignTimeRectangle="490, 707, 1181, 43" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'INPUT result-wind'" FullSelectorArgument="&lt;webctrl id='result-wind' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='result-wind' tag='INPUT' type='number' class='form-control' aaname='Скорость ветра' /&gt;" Guid="85ef9710-7e3f-4b4a-962a-f50f52426419" ImageBase64="iVBORw0KGgoAAAANSUhEUgAABKEAAAAvCAYAAAA7MtmcAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAKnSURBVHhe7dxNalNRHMZh1yZC6Uqqs9LNtFuQrkBpMqnOuwAdVJy0UFKUkIR8HHlD7iWxVJvof/Y88Bvcy13Byzn3VQMAAACAYkYoAAAAAMoZoQAAAAAoZ4QCAAAAoNyTEep2cNWGZ6ft8viovX/zWpIkSZIkSXpR2ZOyK2Vf+t3OCHVzcd4+vD1pXwaD9nB310ajkSRJkiRJkvSisidlV8q+lJ1pWz9CZaHKBw/39208HrfJZNKm02mbzWaSJEmSJEnSH8uOlD0pu1L2pexM2yei+hEqR6W+DgfrjxeLRVutVpIkSZIkSdJeZVfKvpSdKXtTpx+hcmfvx2jUlsvl5g0AAAAA7C/70s/Hx/Xe1OlHqPw8KkenslgBAAAAwKGyL2Vnyt7U2Rmh5vP55gkAAAAADped6dkRKnf2AAAAAOBfZWcyQgEAAABQyggFAAAAQDkjFAAAAADljFAAAAAAlDNCAQAAAFDOCAUAAABAOSMUAAAAAOWMUAAAAACUM0IBAAAAUM4IBQAAAEA5IxQAAAAA5YxQAAAAAJQzQgEAAABQzggFAAAAQDkjFAAAAADljFAAAAAAlDNCAQAAAFDOCAUAAABAOSMUAAAAAOWMUAAAAACUM0IBAAAAUM4IBQAAAEA5IxQAAAAA5YxQAAAAAJQzQgEAAABQzggFAAAAQDkjFAAAAADljFAAAAAAlDNCAQAAAFDu2RHq8viozcbjzRMAAAAAHC47U/amTj9CDc9O27fr680TAAAAABwuO1P2pk4/Qt0OrtrHdydtPpls3gAAAADA/rIvZWfK3tTpR6i4uThff/D986e2mE43bwEAAADg77InZVfKvpSdadvOCBVZqHJUKnf28vMoSZIkSZIk6SVlT8qutH0CqvNkhAIAAACA/6u1XzU+nkszSiKSAAAAAElFTkSuQmCC" InformativeScreenshot="31d8187bb9dede7689bad26a3c838b4d.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Добавление показателей' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                <uix:Target DesignTimeRectangle="490, 676, 142, 25" ElementType="Text" FriendlyName="'Скорость ветра'" FullSelectorArgument="&lt;webctrl aaname='Скорость ветра' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Скорость ветра' tag='LABEL' type='' class='control-label' check:innerText='Скорость ветра' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:NTypeInto.Target>
+                        <uix:NTypeInto.Text>
+                          <InArgument x:TypeArguments="x:String">
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_54">wind</CSharpValue>
+                          </InArgument>
+                        </uix:NTypeInto.Text>
+                      </uix:NTypeInto>
+                      <ui:InvokeCode ContinueOnError="{x:Null}" Code="// Определение направления ветра&#xD;&#xA;&#xD;&#xA;//&#x9;Если скорость вертра не равна 0 (т.е в таблице только направление)&#xD;&#xA;if (AM.Length &gt; 2)&#xD;&#xA;{&#xD;&#xA;&#x9;string[] words = AM.Split(&quot; &quot;);&#xD;&#xA;&#x9;out_wind = words[0];&#xD;&#xA;}&#xD;&#xA;else&#xD;&#xA;{&#xD;&#xA;&#x9;out_wind = AM;&#xD;&#xA;}" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="481.6,174.4" sap2010:WorkflowViewState.IdRef="InvokeCode_3" Language="CSharp">
+                        <ui:InvokeCode.Arguments>
+                          <InArgument x:TypeArguments="x:String" x:Key="AM">
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_57">row["День Ветер"].ToString()</CSharpValue>
+                          </InArgument>
+                          <OutArgument x:TypeArguments="x:String" x:Key="out_wind">
+                            <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_13">windDirection</CSharpReference>
+                          </OutArgument>
+                        </ui:InvokeCode.Arguments>
+                      </ui:InvokeCode>
+                      <If sap:VirtualizedContainerService.HintSize="481.6,571.2" sap2010:WorkflowViewState.IdRef="If_1">
+                        <If.Condition>
+                          <InArgument x:TypeArguments="x:Boolean">
+                            <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_62">windDirection != "Ш"</CSharpValue>
+                          </InArgument>
+                        </If.Condition>
+                        <If.Then>
+                          <Sequence sap:VirtualizedContainerService.HintSize="400,290.4" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NSelectItem DisplayName="Select Item 'Направление ветра'" sap:VirtualizedContainerService.HintSize="337.6,167.2" sap2010:WorkflowViewState.IdRef="NSelectItem_2" ScopeIdentifier="447cf4a9-e9ef-4fe9-aa8f-db89086859a8" Version="V3">
+                              <uix:NSelectItem.Item>
+                                <InArgument x:TypeArguments="x:String">
+                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_59">windDirection</CSharpValue>
+                                </InArgument>
+                              </uix:NSelectItem.Item>
+                              <uix:NSelectItem.Items>
+                                <scg:List x:TypeArguments="x:String" Capacity="9">
+                                  <x:String>---Укажите направление---</x:String>
+                                  <x:String>С</x:String>
+                                  <x:String>СВ</x:String>
+                                  <x:String>В</x:String>
+                                  <x:String>ЮВ</x:String>
+                                  <x:String>Ю</x:String>
+                                  <x:String>ЮЗ</x:String>
+                                  <x:String>З</x:String>
+                                  <x:String>СЗ</x:String>
+                                </scg:List>
+                              </uix:NSelectItem.Items>
+                              <uix:NSelectItem.Target>
+                                <uix:TargetAnchorable BrowserURL="https://rpa.maximkozhin.ru/main/default/add" DesignTimeRectangle="490, 831, 1181, 43" DesignTimeScaleFactor="1.25" ElementType="DropDown" FriendlyName="'---Укажите направление-…'" FullSelectorArgument="&lt;webctrl id='result-direction' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='result-direction' tag='SELECT' type='' class='form-control' aaname='Направление ветра' /&gt;" Guid="0e48655e-6222-4ccf-b970-d30b8771ef38" InformativeScreenshot="5096b345e918cbc950b8b6f4f82ee399.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Добавление показателей' /&gt;" SearchSteps="FuzzySelector" Version="V1" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                      <uix:Target DesignTimeRectangle="490, 800, 182, 25" ElementType="Text" FriendlyName="'Направление ветра'" FullSelectorArgument="&lt;webctrl aaname='Направление ветра' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Направление ветра' tag='LABEL' type='' class='control-label' check:innerText='Направление ветра' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NSelectItem.Target>
+                            </uix:NSelectItem>
+                          </Sequence>
+                        </If.Then>
+                        <If.Else>
+                          <Sequence sap:VirtualizedContainerService.HintSize="400,115.2" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </Sequence>
+                        </If.Else>
+                      </If>
+                      <uix:NClick ClickType="Single" DisplayName="Click 'Сохранить'" sap:VirtualizedContainerService.HintSize="481.6,167.2" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="447cf4a9-e9ef-4fe9-aa8f-db89086859a8" Version="V3">
+                        <uix:NClick.Target>
+                          <uix:TargetAnchorable BrowserURL="https://rpa.maximkozhin.ru/main/default/add" DesignTimeRectangle="490, 893, 124, 43" DesignTimeScaleFactor="1.25" ElementType="Button" FriendlyName="'Сохранить'" FullSelectorArgument="&lt;webctrl tag='BUTTON' type='submit' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='submit' class='btn btn-success' aaname='Сохранить' check:innerText='Сохранить' /&gt;" Guid="98bfed98-286e-430c-b39c-a475a49bf70c" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIAAAAAvCAYAAAArdMLwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAUASURBVHhe7ZxBa9tKEMffByz02EPdD6Fec/fFl558CQWffDEUX1QCuQiDe3gi4Ab0Stm2OE1UBzVpndhKGiXxvJnVrryyV25iV22j3YE/xKvZXXvnt7MjBfQPWDPaLACGmwXAcFsCwPvswXPvOTzuPoZHrx5ZVUAUS4opxXbRcgC83H8Jz14/gyfuE3i68xRqOzWrCohiSTGl2FKMVcsAIDrIwQa+uqLYUozVTJABQCmCKNF1tKqOKMYUa2kZAHRO2N1ffVGMKdbSMgCoWNB1sKqeKNbSLAAGygJguCwAhssCYLgsAIbLAmC4LACGywJguMoHoNeE7vEQxteJGB1tlkByFQEbtaGu62P121QuAHsehLfpmPE0AD/sQ5/0lUF4mcD467a+n9VvU4kAtCG4otFiCNiW5rrV36DSAKh/ifhY0aihvb6kPRcG0xiSGe+Gx0QM47M+tHrSpw7eBI+R2xC8PaXfjgPd73S8ROCLdm+KHycebDEfQg5havElg923jtK3Bk6wC4E6L1p8EYCrzvEuQIwBwiOlLXcNIX+nftb49rrAbvjoqa/wK7L4tI39MINmfy+M94tUEgBOGoTZEHazAK6QL46K6xAGBx1o7rfSuoHargJoyzGEXzL1oCH6Oh8Y8PCHc9D43DcYltsxsLALrf0mdA5ZOh4B5IvxqP8BznPBxLyKX9yf1ycbA+BA+xRbOWTCt1eHFzgfzdnc9xFfvPLdFZ+b8OJfAvXBAoDp/xoH+jGApvZ6Xp1v+R0s5bxPFzP6Up+3DYcY8AQXGAMudpUKBIkDgD7sQ363y+D8bEF5sHDpPdm2KQC8Db/zCcv7ZioK9EMHAAOjv65K+OKOc4quXfjK3YJI+biT2bnuSBAAYPZxlbZUTRj8wGs/A/OIlv1XAdAA/wIb8Pc1Fn0zVRWAO2WA1T+SB/MajwG1vSfGp111OM8OUto+Bdect13wz8YQ31AWUm0ZgGIrBqARUnIX2W1NAJYMb6N19cw6KgmAekq9dhcuag0A9tIzk4z6LWaOuwIgj5gEF7P/sYVnbwO2yK8gA0QjeWYr+rSQ1lUARM0Sn4jftiYAam3A66NQ1Ck3DDo5//urJABq0IzGfKzwaHmH5tVKbxfvfASIlIpBdI956QTB+/xO4EFWA5gpfwS45/i3plBtnfAQbnAEpPWHS0cUwSbHXxcAzeZweGbRjXU/lQZArefCkFfdmP6C1akqLbo0RaCs8JUicJuDJYMuYFDvFFApAADDg/y8csfLBeV+uIu6ik9tZzuFZCMA8POIvvtCIVoGAP/l2++r8gBA0YKP+a1PAuOJ8iQwHACbRBB8Fr50plMWQFjYobgNlGlODa4IBC1Ili3EcaC28cDS4+ZZDOFx8W2gfFYRn3nQQZ/Wxz6wS+x3S9htAgD+YpwrOXfzWW1dAIqOAFqbnP/9VSoApKzIoi8sTfwvwGeK75sW9CcrHgRJSBZ2O6kxokDOd5s8591PAwiv5sUdf8CTK5wa4J5GECtzRqe42DxQmwEAszlohb6ZVgOwZFQETgf5h1VrqnQA/oQkAJvuDhNkATBcFgDDZQEwXJUEwOrusgAYLguA4bIAGC4LgOGyABguLQD2BRFmqPAFEfYVMWao8BUx9iVR1RfFtvAlUWT2NXHVFMWSYkqxLXxNnDSig1IEnRNULFg9fFEsKabqzpe2BIA1s8wCYLQB/A8NW2e7BujxdwAAAABJRU5ErkJggg==" InformativeScreenshot="377e541acdf31f95b0fb894ae32db2e3.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Добавление показателей' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+                        </uix:NClick.Target>
+                      </uix:NClick>
+                    </Sequence>
+                  </ActivityAction>
+                </ui:ForEachRow.Body>
+                <ui:ForEachRow.DataTable>
+                  <InArgument x:TypeArguments="sd:DataTable">
+                    <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_27">in_weatherDt</CSharpValue>
+                  </InArgument>
+                </ui:ForEachRow.DataTable>
+              </ui:ForEachRow>
+            </Sequence>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAABTSURBVDhP7YyxCYBQFAODqzmSa1i6lNu4wZPAlYE0v7Dw4Koj0RLm1CTJOu5tkuT/wKSxJfeD77FfzyTJnTS25E4aW3InjS25k8aW3EljS16J9AINXA/kd1KHwAAAAABJRU5ErkJggg==" InformativeScreenshot="623b4f94f00640a2528403a37682f5fc.jpg" Selector="&lt;html app='chrome.exe' title='Вход' /&gt;" Url="https://rpa.maximkozhin.ru/" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
